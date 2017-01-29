@@ -2,7 +2,14 @@ import random   # used from random coordinate generator.
 
 
 def main():
-    # declare variables
+    # turns     Integer     Holds value of how many turns the players have had
+    # win       String      Used to tell if someone has won
+    # board     2D Array    Holds the board
+    # players   Array       Holds the player names
+    # player    String      Holds the current player name
+    # x         Integer    Holds value of x coordinate
+    # y         Integer    Holds value of y coordinate
+
     turns = 0
     win = "noWinner"
     board = [["", "", ""],  # generates initial board
@@ -47,6 +54,13 @@ def main():
 
 def getTurn(board, players, player):
 
+    # board     2D Array    Holds the board
+    # players   Array       Holds the player names
+    # player    String      Holds the current player name
+    # spaceFree Boolean     Used in while loop to see if empty space
+    # x         Integer    Holds value of x coordinate
+    # y         Integer    Holds value of y coordinate
+
     if players[player] == "human":
         # human
         spaceFree = False
@@ -71,6 +85,12 @@ def getTurn(board, players, player):
 
 def updateBoard(x, y, board, players, player):
 
+    # board     2D Array    Holds the board
+    # players   Array       Holds the player names
+    # player    String      Holds the current player name
+    # x         Integer     Holds value of x coordinate
+    # y         Integer     Holds value of y coordinate
+
     if players[player] == 'human':  # if human turn
         board[x][y] = "X"   # puts X on player's coordinates
     else:   # if computer turn
@@ -78,6 +98,10 @@ def updateBoard(x, y, board, players, player):
 
 
 def getNatural(message):
+
+    # valid     Boolean     Used in while loop for valid number
+    # number    String      Stores input of x or y
+
     valid = False
     while not valid:    # while number is not valid
         number = str(input(message))
@@ -93,6 +117,10 @@ def getNatural(message):
 
 
 def getRandom():    # simple random number generator from 0 to 2
+
+    # x         Integer     Holds value of random x coordinate
+    # y         Integer     Holds value of random y coordinate
+
     x = random.randint(0, 2)
     y = random.randint(0, 2)
 
@@ -100,6 +128,14 @@ def getRandom():    # simple random number generator from 0 to 2
 
 
 def checkWin(board, turn):
+
+    # board     2D Array    Holds the board
+    # win       String      Used to tell if someone has won
+    # x         Integer     Holds value of x coordinate
+    # y         Integer     Holds value of y coordinate
+    # counter   Integer     Counts number of X/O's in a row
+    # checkDraw Boolean
+
 
     win = "noWinner"
 
@@ -160,8 +196,13 @@ def checkWin(board, turn):
 
 
 def drawBoard(board):
+
+    # board     2D Array    Holds the board
+    # x         Integer     Holds value of x coordinate
+    # y         Integer     Holds value of y coordinate
+
     for y in range(0, 3):
         for x in range(0, 3):
             board[x][y] = "-"   # put a - in every space
 
-main()  # calls main() function to srart the program.
+main()  # calls main() function to start the program.
