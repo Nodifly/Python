@@ -7,8 +7,8 @@ def main():
     # board     2D Array    Holds the board
     # players   Array       Holds the player names
     # player    String      Holds the current player name
-    # x         Integer    Holds value of x coordinate
-    # y         Integer    Holds value of y coordinate
+    # x         Integer     Holds value of x coordinate
+    # y         Integer     Holds value of y coordinate
 
     turns = 0
     win = "noWinner"
@@ -58,8 +58,8 @@ def getTurn(board, players, player):
     # players   Array       Holds the player names
     # player    String      Holds the current player name
     # spaceFree Boolean     Used in while loop to see if empty space
-    # x         Integer    Holds value of x coordinate
-    # y         Integer    Holds value of y coordinate
+    # x         Integer     Holds value of x coordinate
+    # y         Integer     Holds value of y coordinate
 
     if players[player] == "human":
         # human
