@@ -59,12 +59,14 @@ def GetPlayersName():
 #end def for GetPlayersName()
 
 
-def CheckIfMoveIsValid(Board, Move):
+def CheckIfMoveIsValid(Board, Move, BoardSize):
     Row = Move % 10
     Column = Move // 10
     MoveIsValid = False
-    if Board[Row][Column] == " ":
-        MoveIsValid = True
+    if (Row + Column) <= (BoardSize*2)
+        if Board[Row][Column] == " ":
+            MoveIsValid = True
+        #end if
     #end if
     return MoveIsValid
 #end def
@@ -210,7 +212,7 @@ def PlayGame(PlayerName, BoardSize):
                 Move = GetComputerPlayerMove(BoardSize)
             #end if
 
-            MoveIsValid = CheckIfMoveIsValid(Board, Move)
+            MoveIsValid = CheckIfMoveIsValid(Board, Move, BoardSize)
         #end while
         if not HumanPlayersTurn:
             print("Press the Enter key and the computer will make its move")
